@@ -1,0 +1,130 @@
+:root {
+  --link: rgb(113, 128, 113);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  list-style-type: none;
+
+  & header {
+    width: inherit;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1.5rem;
+
+    & .menu {
+      list-style-type: none;
+      display: flex;
+      gap: 1.25rem;
+
+      &:hover a:not(:hover) { border: none; }
+
+      & li:first-of-type a { border-bottom: 2px solid var(--link); }
+
+      & a {
+        text-decoration: none;
+        font: 900 0.75rem futura,sans-serif;
+        color: var(--link);
+        text-transform: uppercase;
+        padding-bottom: 0.5rem;
+
+        &:hover { border-bottom: 2px solid var(--link); }
+      }
+    }
+
+    & .hamburger {
+      font-size: 2rem;
+      color: var(--link);
+      cursor: pointer;
+      display: none;
+    }
+
+    @media (width < 700px) {
+      & .menu       { display: none; }
+      & .hamburger  { display: block; }
+    }
+  }
+
+  & .layer {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-position: center 25%;
+    background-size: cover;
+    z-index: -1;
+    transition: transform 0.1 ease-out;
+
+    &:nth-of-type(1) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/1.svg'); }
+    &:nth-of-type(2) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/2.svg'); }
+    &:nth-of-type(3) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/3.svg'); }
+    &:nth-of-type(4) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg'); }
+    &:nth-of-type(5) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg'); }
+    &:nth-of-type(6) { background-image: url('https://gist.githubusercontent.com/mondenoir/5395b6e7d9445c3a0fc82e6ece97268c/raw/bca5c0c6397e38d79b5af9e88f78f0aa7b515b94/img-1.svg'); }
+  }
+}
+
+@media (height < 700px) {
+  .parallax {
+    height: 160vh;
+  }
+}
+
+.content {
+  background-color: rgba(39,40,25);
+  display: grid;
+  place-items: center;
+  gap: 3rem;
+
+  & .info {
+    width: min(80vw,550px);
+    font: 0.85rem/1.8 futura,sans-serif;
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+
+    & h1 {
+      font-size: 1.25rem;
+      color: rgb(204, 117, 107);
+    }
+
+    & img { width: 30vmin; }
+  }
+
+  & footer {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 3rem;
+
+    & ion-icon {
+      cursor: pointer;
+      color: rgb(93, 106, 93);
+      font-size: 1.1rem;
+
+      &:hover { color: rgb(121, 149, 121); }
+    }
+  }
+}
+button{
+  background: #212121;
+  color: white;
+  padding: 1rem;
+  border: none;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+}
+button:active{
+  opacity: 50%;
+}
